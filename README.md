@@ -4,7 +4,7 @@ This repository contains the code for three distinct projects, all in some way r
 2) An analysis of agreement in reviewer scores depending on the number of reviewers.
 3) <Alex>
 
-DPR Allocation program
+# DPR Allocation program
 
 Distributed Peer Review (DPR) is a peer review system whereby the applicants to a funding opportunity are themselves reviewers. In this system, there are no external expert reviewers. A core step of this system is therefore matching applicants to reviewers.
 
@@ -14,12 +14,21 @@ Assigning each applicant to ten reviewers if possible, ensuring that reciprocal 
 
 A schematic overview of how the program works can be seen in Figure 1 below.
 
+![DPR_Allocation_Diagram_100225](https://github.com/user-attachments/assets/bd7fd0b5-e52a-40c3-b75d-34ac526f21db)
+*Figure 1, DPR Allocation Program overview
+
 The scripts involved are:
 scripts/main.R is the main workhorse
 scripts/QAloop.R and scripts/qualityassurance.R, two small scripts used purely for quality assuring
 All scripts in functions/, which are loaded in via main.R.
 
-![DPR_Allocation_Diagram_100225](https://github.com/user-attachments/assets/bd7fd0b5-e52a-40c3-b75d-34ac526f21db)
-*Figure 1, DPR Allocation Program overview
+# Consistency Analysis
+This analysis can be read about in the A Year In Metascience report (linked above). 
+The code for this analysis is found in ConsistencyAnalysis/
+
+# Partial Randomisation Simulations
+
+The code for this analysis is found in PartialRandomisation/
+
 
 
