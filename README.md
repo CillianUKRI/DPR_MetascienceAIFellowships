@@ -8,9 +8,9 @@ This repository contains the code for three distinct projects, all in some way r
 
 Distributed Peer Review (DPR) is a peer review system whereby the applicants to a funding opportunity are themselves reviewers. In this system, there are no external expert reviewers. A core step of this system is therefore matching applicants to reviewers.
 
-In the specific funding opportunity that DPR was used for in this instance (AI Metascience Fellowships (https://www.ukri.org/opportunity/ukri-metascience-ai-early-career-fellowships/), the aim was to have each application reviewed 8-10 times and for each applicant to review 8-10 times. A goal was to minimise "bad faith" interaction with the system, and this was pursued by:
-Creating two funding pools with equal funding available, each comprised of half the applicants.
-Assigning each applicant to ten reviewers if possible, ensuring that reciprocal matches and matches with the same institutions are impossible.
+In the specific funding opportunity that DPR was used for in this instance (AI Metascience Fellowships (https://www.ukri.org/opportunity/ukri-metascience-ai-early-career-fellowships/), the aim was to have each application reviewed 8-10 times and for each applicant to review 8-10 times. It was a priority to minimise "bad faith" interaction with the system, and this was pursued by:
+-Creating two funding pools with equal funding available, each comprised of half the applicants.
+-Assigning each applicant to ten reviewers if possible, ensuring that reciprocal matches and matches with the same institutions are impossible.
 
 A schematic overview of how the program works can be seen in Figure 1 below.
 
