@@ -2,9 +2,12 @@
 # Author: Cillian Brophy
 # Date last modified: 28/04/25
 # Script purpose: This script loads in the csv file which contains the input data for the DPR allocation program (main.R).
-#                 In doing this, it extracts the Co-Is that also appear as applicants.
+#                 In doing this, it extracts the Co-Is that also appear as applicants (not needed for fellowships).
 #                 Also, the applicant pool is split into two groups randomly, and the count vectors for each group are initiated.
 # Workflow and file dependencies: Run script from start to finish. Additional checks are commented out at the end.
+# Format of inputdf: 6 columns, 5 character and 1 numeric ("ID"). 
+#                   Reference | ApplicantName | ApplicantOrganisation | ApplicantEmail | ID | Conflicts
+#           e.g.    APP123456   Joe Bloggs       University of Exeter   joebloggs@uoe...  1   None
 #################################################################################################
 
 ## Load in data
@@ -33,6 +36,7 @@ inputdf <- read_csv("inputdata/ApplicationsFinal_280425.csv") |>
   mutate(ID = as.numeric(ID))
 
 ##### This section removes any Co-Is that are unique, i.e. only present for one application
+##### Not needed for fellowships
 # This is to 
 # Split the names into individual rows
 # df_split <- data.frame(
