@@ -18,9 +18,15 @@ A schematic overview of how the program works can be seen in Figure 1 below.
 *Figure 1, DPR Allocation Program overview
 
 The scripts involved are:
-scripts/main.R is the main workhorse
-scripts/QAloop.R and scripts/qualityassurance.R, two small scripts used purely for quality assuring
-All scripts in functions/, which are loaded in via main.R.
+* scripts/main.R is the main workhorse
+* scripts/QAloop.R and scripts/qualityassurance.R, two small scripts used purely for quality assuring
+* All scripts in functions/, which are loaded in via main.R.
+
+
+
+While the real data used as input cannot be shared publicly, a mock dataframe row can be viewed in the load_input_data280425DPR.R script
+
+The output from this program is a table (csv) with each applicant as a row and each reviewer as a column. 
 
 # Consistency Analysis
 This analysis can be read about in the A Year In Metascience report (linked above). 
