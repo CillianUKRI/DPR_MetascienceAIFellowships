@@ -2,7 +2,11 @@
 This repository contains the code for three distinct projects, all in some way related to the A Year In Metascience 2025  report https://www.gov.uk/government/publications/a-year-in-metascience-2025:
 1) An allocation program used in the AI Metascience Fellowships call 2025 where distributed peer review (DPR) was used.
 2) An analysis of agreement in reviewer scores depending on the number of reviewers.
-3) <Alex>
+3) Partial Randomisation: Simulations of proposals and their assessment 
+in funding decision meetings, to attempt to help funders 
+understand better how the degree of bias 
+and the extent of randomisation can affect the 
+quality of decision-making and its outcomes.
 
 # DPR Allocation program
 
