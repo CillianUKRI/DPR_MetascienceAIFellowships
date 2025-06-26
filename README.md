@@ -41,4 +41,5 @@ The code for this analysis is found in ConsistencyAnalysis/
 The code for this analysis is found in PartialRandomisation/
 
 
-
+# License
+MIT © CillianUKRI
