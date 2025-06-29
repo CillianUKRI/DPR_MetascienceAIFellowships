@@ -40,6 +40,15 @@ The code for this analysis is found in ConsistencyAnalysis/
 
 The code for this analysis is found in PartialRandomisation/
 
+Making only some basic assumptions about the distribution of application scores and how assessment panels might operate, this simulation attempts to show
+
+1) how the reliability of a peer review process might be affected by the use of partial randomisation
+2) how much influence on outcomes, in terms of reducing bias, partial randomsation might have.
+
+While the simulations themselves do not use any UKRI data and should run without problems, there is a small part of the code that reads from an internal UKRI data source. Anyone using the code will need to remove that part of it. The related figure cannot be reproduced from the code unless it is run within UKRI.
+
+
+
 
 # License
 MIT © CillianUKRI
