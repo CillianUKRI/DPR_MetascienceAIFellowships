@@ -1,32 +1,23 @@
 library(tidyverse)
-library(rlang)
 library(here)
-library(knitr)
-library(ggrepel)
-library(quarto)
 library(DT)
-library(jsonlite)
-library(purrr)
 library(psych) # to calculate ICCs
 library(irr) # to calculate ICCs
 library(lme4)
-#source(here("scripts", "helperfunctions.R"))
+
 set.seed(122)
 
 # Load in score data ------------------------------------------------------
 
-realscores <- read_csv(here("input", "DPRScoresDownloadFromTFS_Formatted050625.csv")) |>
+# this data file cannot be shared but consists for 2 columns
+# the format looks like this, and has ~800 rows
+# Application | Score
+# <character> | <numeric>
+
+realscores <- read_csv(here("inputdata", "DPRScoresDownloadFromTFS_Formatted050625.csv")) |>
   select(`Application ID`, Score) |>
   rename("Application" = `Application ID`) |>
-  mutate(Application = paste0("APP", Application)) 
-
-lookup <- read_csv(here("input", "lookupAppcode.csv")) |>
-  select(-ApplicantName)
-
-lookupreviewer <- read_csv(here("input", "lookupAppcode.csv")) |>
-  rename("ReviewerName"=`ApplicantName`) |>
-  rename("ReviewerAllocationGroup" = AllocationGroup) |>
-  rename("Reviewer" = Application)
+  mutate(Application = paste0("APP", Application)) # this data file cannot be shared but consists for 2 columns
 
 # Monday 9 June -----------------------------------------------------------
 
@@ -45,16 +36,17 @@ diffICCs <- data.frame(numberreviewers = c(3,4,5,6,7,8,9),
                        SDDlowCI = rep(NA,7),
                        SDDhighCI = rep(NA,7))
 
-# Example: wide to long
+# Convert the longform data to wide
 long_data <- realscores %>%
   group_by(Application) |>
   slice_head(n=9) |>
-  filter(n() == 9) |> # Keep only 9 reviews from each Application (and remove those that have less)
+  filter(n() == 9) |> # Keep only 9 reviews from each Application (and remove those that have less, to remove NA values)
   mutate(reviewer_id = paste0("Reviewer", row_number())) |>
   ungroup()
 
 
 # Group by application and nest scores
+# This creates a table with 9 columns and 80 rows. A column for each reviewer, row for each application
 full_icc_data <- long_data %>%
   group_by(Application) %>%
   slice_head(n=9) |>
