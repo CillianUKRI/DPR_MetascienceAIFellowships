@@ -9,7 +9,7 @@ set.seed(122)
 
 # Load in score data ------------------------------------------------------
 
-# this data file cannot be shared but consists for 2 columns
+# this data file cannot be shared but consists of 2 columns
 # the format looks like this, and has ~800 rows
 # Application | Score
 # <character> | <numeric>
@@ -17,7 +17,7 @@ set.seed(122)
 realscores <- read_csv(here("inputdata", "DPRScoresDownloadFromTFS_Formatted050625.csv")) |>
   select(`Application ID`, Score) |>
   rename("Application" = `Application ID`) |>
-  mutate(Application = paste0("APP", Application)) # this data file cannot be shared but consists for 2 columns
+  mutate(Application = paste0("APP", Application)) 
 
 # Monday 9 June -----------------------------------------------------------
 
